@@ -1,0 +1,35 @@
+{
+  "name": "payease",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "db:generate": "cd packages/db && npx prisma generate &&  cd ../..",
+    "start-clientApp": "cd ./apps/client_app && npm run start && cd ../..",
+    "start-bankWebhook": "cd ./apps/bank-Webhook && npm run start && cd ../.. "
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "turbo": "latest",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "npm@10.2.5",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "axios": "^1.7.2",
+    "bcrypt": "^5.1.1",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.3.21",
+    "next": "^14.2.5",
+    "styled-jsx": "^5.1.6",
+    "tailwind-merge": "^2.4.0"
+  }
+}
